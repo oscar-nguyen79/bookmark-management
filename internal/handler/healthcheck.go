@@ -26,7 +26,10 @@ func (h *healthCheckHandler) Check(c *gin.Context) {
 	response, err := h.healthCheckService.Check()
 
 	if err != nil {
-		c.AbortWithStatusJSON(http.StatusServiceUnavailable, response)
+		c.AbortWithStatusJSON(http.StatusServiceUnavailable, gin.H{
+			"message": "Service unavailable",
+		})
+		return
 	}
 
 	c.JSON(http.StatusOK, response)
