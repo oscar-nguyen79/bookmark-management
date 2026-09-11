@@ -1,0 +1,68 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Coverage
+*.out
+coverage.out
+coverage.html
+
+# Build output
+/bin/
+/build/
+/dist/
+
+# Go workspace
+go.work
+go.work.sum
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
+# Air live reload
+.air.toml
+
+# Database / local development
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated files
+*.gen.go
+
+# Mock generated files - uncomment if you don't commit mocks
+# internal/**/mocks/
+
+# Secrets / credentials
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.json
