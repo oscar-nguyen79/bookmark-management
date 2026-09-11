@@ -3,6 +3,7 @@ package handler
 import (
 	"bookmark-management/internal/service"
 	"bookmark-management/internal/service/mocks"
+	"errors"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -40,6 +41,24 @@ func TestHealthCheckHandler_Check(t *testing.T) {
 			},
 			expectedStatus:   http.StatusOK,
 			expectedResponse: `{"message":"OK","service_name":"Bookmark-Management","instance_id":"test-instance-xxx"}`,
+		},
+		{
+			name: "failure",
+			setupRequest: func(ctx *gin.Context) {
+				ctx.Request = httptest.NewRequest(http.MethodGet, "/health-check", nil)
+			},
+			setupMockService: func(ctx *gin.Context) *mocks.HealthCheck {
+				serviceMock := mocks.NewHealthCheck(t)
+
+				serviceMock.On("Check").Return(
+					service.HealthCheckResponse{},
+					errors.New("Service unavailable"),
+				)
+
+				return serviceMock
+			},
+			expectedStatus:   http.StatusServiceUnavailable,
+			expectedResponse: `{"message":"Service unavailable"}`,
 		},
 	}
 
