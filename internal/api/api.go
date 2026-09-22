@@ -6,7 +6,11 @@ import (
 	"fmt"
 	"net/http"
 
+	_ "bookmark-management/docs"
+
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 type Engine interface {
@@ -42,6 +46,7 @@ func (e *engine) initRoutes() {
 	healthCheckSvc := service.NewHealthCheck(e.cfg.ServiceName, e.cfg.InstanceID)
 	healthCheckHandler := handler.NewHealthCheck(healthCheckSvc)
 
+	e.app.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	e.app.GET("/health-check", healthCheckHandler.Check)
 
 }

@@ -1,0 +1,27 @@
+basePath: /
+info:
+  contact: {}
+  description: API for managing bookmarks
+  title: Bookmark Management API
+  version: "1.0"
+paths:
+  /health-check:
+    get:
+      description: API health check
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: API health check
+      tags:
+      - Health-check
+swagger: "2.0"
