@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"bookmark-management/internal/service"
-	"bookmark-management/internal/service/mocks"
+	"bookmark-management/internal/app/service"
+	"bookmark-management/internal/app/service/mocks"
 	"errors"
 	"net/http"
 	"net/http/httptest"

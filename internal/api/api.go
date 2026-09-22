@@ -1,8 +1,8 @@
 package api
 
 import (
-	"bookmark-management/internal/handler"
-	"bookmark-management/internal/service"
+	"bookmark-management/internal/app/handler"
+	"bookmark-management/internal/app/service"
 	"fmt"
 	"net/http"
 
