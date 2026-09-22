@@ -1,0 +1,41 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API for managing bookmarks",
+        "title": "Bookmark Management API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/health-check": {
+            "get": {
+                "description": "API health check",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Health-check"
+                ],
+                "summary": "API health check",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
