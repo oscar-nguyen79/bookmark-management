@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	service "bookmark-management/internal/service"
+	"bookmark-management/internal/app/service"
 
 	mock "github.com/stretchr/testify/mock"
 )

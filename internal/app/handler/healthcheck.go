@@ -1,9 +1,8 @@
 package handler
 
 import (
+	"bookmark-management/internal/app/service"
 	"net/http"
-
-	"bookmark-management/internal/service"
 
 	"github.com/gin-gonic/gin"
 )
