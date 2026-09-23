@@ -12,6 +12,7 @@
 *.out
 coverage.out
 coverage.html
+coverage.tmp
 
 # Build output
 /bin/
